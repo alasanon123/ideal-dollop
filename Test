@@ -1,0 +1,14 @@
+<?php
+$data = ["key1" => 10, "key2" => 15, "key3" => 20];
+$output = [];
+foreach ($data as $key => $value) {
+if ($value % 3 == 0) {
+$output[$key] = $value;
+}
+}
+array_walk($output, function(&$value) {
+$value--;
+});
+foreach ($output as $value) {
+echo $value .PHP_EOL;
+}
